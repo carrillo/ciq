@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Node {
 	
 	public Node next = null;
-	public Integer data; 
+	public Object data; 
 	
 	public Node(int d) {
 		this.data = d; 
@@ -20,8 +20,8 @@ public class Node {
 		n.next = node; 
 	}
 	
-	public ArrayList<Integer> toArrayList() {
-		ArrayList<Integer> al = new ArrayList<Integer>(); 
+	public ArrayList<Object> toArrayList() {
+		ArrayList<Object> al = new ArrayList<Object>(); 
 		Node n = this; 
 		do { 
 			al.add(n.data);
@@ -33,9 +33,9 @@ public class Node {
 	
 	// Inefficient, just a hack. 
 	public String toString() {
-		ArrayList<Integer> al = toArrayList(); 
+		ArrayList<Object> al = toArrayList(); 
 		String s = ""; 
-		for( Integer i : al ) { s += Integer.valueOf(i) + ","; }
+		for( Object i : al ) { s += i.toString() + ","; }
 		return s; 
 	}
 

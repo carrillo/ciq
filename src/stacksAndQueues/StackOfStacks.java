@@ -37,12 +37,12 @@ public class StackOfStacks {
 			return null; 
 		} else {
 			Integer out = sos.get(index[0])[index[1]]; 
-			if(index[1] + 1 < max_cap) {
+			if(index[1] > 0) {
 				index[1]--; 
 			} else {
 				sos.remove(index[0]); 
 				index[0]--; 
-				index[1] = 0; 
+				index[1] = max_cap-1; 
 			}
 			return out; 
 		}
@@ -54,6 +54,10 @@ public class StackOfStacks {
 		for( int i = 0; i < 100; i++ ) {
 			sos.push(i);
 			System.out.println(i + "\t" + sos.index[0] + "\t" + sos.index[1]); 
+		}
+		
+		for( int i = 0; i < 101; i++ ) {
+			System.out.println(sos.pop() + "\t" + sos.index[0] + "\t" + sos.index[1]); 
 		}
 		
 		

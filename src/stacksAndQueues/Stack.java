@@ -15,11 +15,11 @@ public class Stack {
 
 	private Node top = null;
 	
-	public Integer pop() {
+	public Object pop() {
 		if( this.top != null ) {
 			return null; 
 		} else {
-			Integer out = top.data;
+			Object out = top.data;
 			top = top.next; 
 			return out; 
 		}
@@ -31,7 +31,7 @@ public class Stack {
 		top = n; 
 	}
 	
-	public Integer peak() { 
+	public Object peak() { 
 		return top.data; 
 	}
 	

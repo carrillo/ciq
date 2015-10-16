@@ -14,7 +14,7 @@ import java.util.HashSet;
 public class RemoveDuplicates {
 
 	public static void deleteDups_hash(Node node) {
-		HashSet<Integer> values = new HashSet<Integer>(); 
+		HashSet<Object> values = new HashSet<Object>(); 
 		
 		Node n = node; 
 		Node previous = null; 

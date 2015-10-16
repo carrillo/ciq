@@ -24,12 +24,12 @@ public class Queue {
 		}
 	}
 	
-	public Integer dequeue() {
+	public Object dequeue() {
 		if(first != null) {
-			Integer i = first.data; 
+			Object o = first.data; 
 			first = first.next; 
 			if(first == null) last = null; 
-			return i; 
+			return o; 
 		} else {
 			return null; 
 		}
