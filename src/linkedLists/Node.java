@@ -7,8 +7,8 @@ public class Node {
 	public Node next = null;
 	public Object data; 
 	
-	public Node(int d) {
-		this.data = d; 
+	public Node(Object o) {
+		this.data = o; 
 	}
 	
 	public void appendToTail(int d) {

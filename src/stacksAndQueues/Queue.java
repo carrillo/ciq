@@ -14,12 +14,12 @@ import linkedLists.Node;
 public class Queue {
 	Node first, last; 
 	
-	public void enqueue(Integer i) {
+	public void enqueue(Object o) {
 		if( first == null ) {
-			last = new Node(i); 
+			last = new Node(o); 
 			first = last; 
 		} else {
-			last.next = new Node(i);
+			last.next = new Node(o);
 			last = last.next;
 		}
 	}

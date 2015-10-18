@@ -1,7 +1,8 @@
 package TreesAndGraphs;
 
 import java.util.ArrayList;
-import java.util.Queue;
+
+import stacksAndQueues.Queue;
 
 public class GraphNode {
 
@@ -23,10 +24,29 @@ public class GraphNode {
 		}
 	}
 	
-	private ArrayList<Object> bfs(Queue<GraphNode> q) {
+	/**
+	 * Breath first search. 
+	 * @param q
+	 * @return
+	 */
+	private ArrayList<Object> bfs(Queue q) {
+		//Special first case. we are at root node and is not visited. 
+		this.visited = true; 
+		
+		//Collect data for each unvisited node. 
 		ArrayList<Object> out = new ArrayList<Object>(); 
+		for( GraphNode n : neighbors ) {
+			if(!n.visited) {
+				out.add(n.data); 
+				n.visited = true; 
+				q.enqueue(n);
+			}
+		} 
 		
-		
+		GraphNode n = (GraphNode) q.dequeue();
+		if(n != null) {
+			out.addAll(n.bfs(q));
+		}
 		return out; 
 	}
 	
@@ -60,9 +80,17 @@ public class GraphNode {
 		return a; 
 	}
 	
+	public String toString() { 
+		return this.data.toString(); 
+	}
+	
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		GraphNode ex = exampleGraph(); 
+		ArrayList<Object> nodes = ex.bfs(new Queue());
+		for( Object o : nodes ) {
+			System.out.println(o); 
+		}
 
 	}
 
