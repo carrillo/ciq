@@ -39,8 +39,25 @@ public class MathAlgorithms {
 		return curr_estimate; 
 	}
 	
+	/**
+	 * Estimate the square-root of s, starting with an initial guess of g with a precission of e. 
+	 * @param s
+	 * @param g
+	 * @param e
+	 * @return
+	 */
+	public static double square_root_babylonian_recursive(final double s, final double g, final double e) {
+		double g_new = 0.5*(g + s/g); 
+		if( Math.abs(g_new - g) > e) {
+			return square_root_babylonian_recursive(s, g_new, e); 
+		} else {
+			return g_new; 
+		}
+	}
+	
 	public static void main(String[] args) {
-		System.out.println(square_root_babylonian(125993348, 0.00001)); 
+		System.out.println(square_root_babylonian(125993348, 0.00001));
+		System.out.println(square_root_babylonian_recursive(125993348, 125993348, 0.00001));
 	}
 
 }
