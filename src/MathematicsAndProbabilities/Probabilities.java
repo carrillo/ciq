@@ -1,4 +1,4 @@
-package MathematicsAndProbabilities;
+package mathematicsAndProbabilities;
 
 public class Probabilities {
 

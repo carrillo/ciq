@@ -1,4 +1,4 @@
-package MathematicsAndProbabilities;
+package mathematicsAndProbabilities;
 
 /**
  * Q: Write a method to estimate the square-root of a number. 

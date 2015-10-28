@@ -7,7 +7,7 @@ import java.util.Random;
  * 
  * Let's represent the card faces as unique integers (52). 
  * 
- * 1. Knuth shuffle: Make sure that each element is only considered once for shuffling. 
+ * 1. Knuth shuffle: Make sure that each element is only considered once for shuffling. O(n) in time and space.  
  * Thus go through each element and swap with a random element which has not been visited yet. 
  * @author fernando carrillo (fernando@carrillo.at)
  *
